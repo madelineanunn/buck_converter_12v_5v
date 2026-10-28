@@ -5,8 +5,6 @@ Design and LTspice simulation of a non-synchronous 12 V to 5 V buck converter sw
 **Author:** Madeline Nunn, BsEE student, Mississippi State University
 **Status:** Design and simulation complete · Hardware build in progress
 
----
-
 ## Results at a glance (simulation)
 
 | Metric | Target | Hand calculation | Simulated (1 A) |
@@ -16,8 +14,6 @@ Design and LTspice simulation of a non-synchronous 12 V to 5 V buck converter sw
 | Output ripple (pk-pk) | < 50 mV | ~22 mV (ESR-dominated) | 22 mV |
 | Efficiency | > 85% | — | 95.0% |
 | Duty cycle | — | 0.417 ideal | 0.43 used |
-
----
 
 ## 1. Specifications
 
@@ -98,11 +94,14 @@ Schematic: [`buck_converter_12v_5v.asc`](buck_converter_12v_5v.asc)
 
 ## 5. Discussion
 
-**Hand calculations matched simulation.** Predicted inductor ripple was 0.31 A and simulated was 0.32 A. Predicted output ripple was about 22 mV, dominated by capacitor ESR, and simulated was 22 mV.
+**Hand calculations matched simulation.** 
+Predicted inductor ripple was 0.31 A and simulated was 0.32 A. Predicted output ripple was about 22 mV, dominated by capacitor ESR, and simulated was 22 mV.
 
-**Light-load behavior: DCM.** At 0.1 A the load current is below the CCM/DCM boundary (~0.16 A), so the inductor current reaches zero each cycle. In DCM the conversion ratio depends on load, and because this design is open loop, the output rises to 6.15 V. A closed feedback loop is needed to regulate the output across the full load range.
+**Light-load behavior: DCM.** 
+At 0.1 A the load current is below the CCM/DCM boundary (~0.16 A), so the inductor current reaches zero each cycle. In DCM the conversion ratio depends on load, and because this design is open loop, the output rises to 6.15 V. A closed feedback loop is needed to regulate the output across the full load range.
 
-**Efficiency is optimistic.** The simulated 95% leaves out gate-drive power (the gate source is ideal), PCB trace inductance and resistance, and real switching-edge ringing. Total loss at 1 A in simulation is about 0.26 W, most of which I expect comes from the Schottky diode conducting during the ~57% of each cycle the switch is off. A hardware build is expected to come in lower, and measuring that gap is one goal of the next phase.
+**Efficiency is optimistic.** 
+The simulated 95% leaves out gate-drive power (the gate source is ideal), PCB trace inductance and resistance, and real switching-edge ringing. Total loss at 1 A in simulation is about 0.26 W, most of which I expect comes from the Schottky diode conducting during the ~57% of each cycle the switch is off. A hardware build is expected to come in lower, and measuring that gap is one goal of the next phase.
 
 ## 6. Next steps
 
