@@ -105,10 +105,10 @@ The simulated 95% leaves out gate-drive power (the gate source is ideal), PCB tr
 
 ## 6. Next steps
 
-- [ ] Build the hardware prototype and measure efficiency and ripple against these simulation results
-- [ ] Add closed-loop voltage control to regulate the output in DCM and under load changes
-- [ ] Simulate a synchronous version (replace the diode with a low-side MOSFET) and compare efficiency
-- [ ] Look at switch-node ringing and its effect on EMI
+- Build the hardware prototype and measure efficiency and ripple against these simulation results
+- Add closed-loop voltage control to regulate the output in DCM and under load changes
+- Simulate a synchronous version (replace the diode with a low-side MOSFET) and compare efficiency
+- Look at switch-node ringing and its effect on EMI
 
 ## Files
 
