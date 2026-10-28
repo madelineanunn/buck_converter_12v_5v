@@ -61,7 +61,7 @@ I_crit = ΔIL / 2 ≈ 0.16 A. Below this load the inductor current falls to zero
 
 Schematic: [`buck_converter_12v_5v.asc`](buck_converter_12v_5v.asc)
 
-![Schematic](Schematic.png)
+![Schematic](schematic.png)
 
 | Component | Model / value |
 |---|---|
