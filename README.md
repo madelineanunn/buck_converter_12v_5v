@@ -36,19 +36,19 @@ I used D = 0.43 in simulation to make up for the diode drop and conduction losse
 
 **Inductor**
 
-L = (Vin − Vout) · D / (ΔIL · fsw)
+L = (Vin − Vout) * D / (ΔIL * fsw)
 
 Targeting ΔIL = 0.3 A (30% of 1 A):
-L = (12 − 5)(0.417) / (0.3 × 200 kHz) = 48.6 µH → **47 µH** selected
+L = (12 − 5)(0.417) / (0.3 × 200 kHz) = 48.6 µH = 47 µH selected
 
 Resulting ripple with 47 µH: ΔIL ≈ 0.31 A, so peak inductor current ≈ 1.16 A. A real part needs a saturation rating of at least 1.5 A.
 
 **Output capacitor**
 
-ΔVout ≈ ΔIL / (8 · fsw · C) + ΔIL · ESR
+ΔVout ≈ ΔIL / (8 * fsw * C) + ΔIL · ESR
 
 With C = 22 µF and ESR = 68 mΩ:
-- Capacitive term: 0.31 / (8 × 200k × 22µ) ≈ 8.8 mV
+- Capacitive term: 0.31 / (8 * 200k * 22µ) ≈ 8.8 mV
 - ESR term: 0.31 A × 68 mΩ ≈ 21 mV
 
 The ESR term dominates. Because the two terms are out of phase, the peak-to-peak ripple lands close to the ESR term rather than their sum.
@@ -61,7 +61,7 @@ I_crit = ΔIL / 2 ≈ 0.16 A. Below this load the inductor current falls to zero
 
 Schematic: [`buck_converter_12v_5v.asc`](buck_converter_12v_5v.asc)
 
-![Schematic](schematic.png)
+![Schematic](Schematic.png)
 
 | Component | Model / value |
 |---|---|
